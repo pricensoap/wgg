@@ -1,8 +1,8 @@
 (function(){
-	
 	var app = angular.module('WGG', []);
-	app.controller = angular.controller('WGGController', function(){
-		
+	app.controller('WGGController', function(){
+		//controller code goes here
+		console.log("InController");
 	});
 	
 })();
