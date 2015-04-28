@@ -14,15 +14,18 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 
-	<!--  app specific -->
+	<!--  app specific js -->
 	<script type="text/javascript" src="view/init.js"></script>
 	<script type="text/javascript" src="view/panel.js"></script>
+	<script type="text/javascript" src="view/main.js"></script>
+	
+	<!-- app css -->
 	<link rel="stylesheet" href="resources/css/wgg.css">
 	
 </head>
 <body>
 	<div data-role="page" id="pageone">
-		<div data-role="panel" id="myPanel" ></div>
+		<div data-role="panel" id="myPanel" data-display="overlay"></div>
 		<div data-role="header" ng-app="WGG" ng-controller="WGGController"> 
 			<h1>Holiday Football Club</h1> 
 			<a href="#myPanel" class="ui-btn ui-btn-inline ui-corner-all ui-shadow">
