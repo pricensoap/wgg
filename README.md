@@ -1,2 +1,4 @@
 # wgg
-And so it begins...
+
+***Subjected to Copyright***
+jk
