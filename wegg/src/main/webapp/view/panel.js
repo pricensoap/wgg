@@ -1,21 +1,15 @@
 (function(){
- /* Sample JSON Data to be fetched via service request */
+
+/**********************SAMPLE*****************************DATA*****************************************************************************/
+	/* Sample JSON Data to be fetched via service request */
 	 var data = [
-	      {
-	    	  "id"	: "HFCGame1",
-	    	  "name" : "Football"
-	      },
-	      {
-	    	  "id"  : "HFCGame2",
-	    	  "name" : "Cricket"
-	      },
-	      {
-	    	  "id" : "HFCGame3",
-	    	  "name" : "Basketball"
-	      }
+	      { "id"	: "HFCGame1", "name" : "Football"  },
+	      {  "id"  : "HFCGame2", "name" : "Cricket" },
+	      {  "id" : "HFCGame3",  "name" : "Basketball" }
 	 ];
-	 /* Sample data ends */
-	 
+/**********************SAMPLE*****************************DATA*****************************************************************************/
+	 var self = this;
+	 this.GameData = {};
 	 /**
 	  * @name _initialize
 	  * Initializes the panel control on document  ready  
@@ -40,12 +34,15 @@
 	 * Used for handling the click event on panel items.
 	 */
 	var _handleClick = function(e){
-		$('#myPanel').panel("close"); // on click first close the panel.
-		var gName = e.srcElement.innerText; //Use this information to populate relevant data on main UI
-		console.log(" Game Selected", gName); /** To be removed **/
+		$('#myPanel').panel("close"); //close the panel
+		var gName = e.srcElement.innerText; //get id of button clicked
+		self.GameData.init(gName); //loads data on main ui accordingly
 	};
 	
 	$(document).ready(function(){ 
 		_initialize();
+		self.GameData = new hfc();
+		self.GameData.init();
+//		self.games = gameData.getData();
 	});
 })();
