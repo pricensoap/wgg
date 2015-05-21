@@ -65,26 +65,24 @@ hfc = function(object){
 		 */
 		var _loadAvailgames = function(games){
 			var i;
-			$(".mainTable").empty();
+			$(".content").empty();
 			if(games !== undefined && games.length !== 0){
-				$('.mainTable').append('<tr class= "mainTableHeader"></tr>');
-				$('.mainTableHeader').append('<td class="clubNameHeader"> Club Name </td>');
-				$('.mainTableHeader').append('<td class="maxPlayersHeader"> Max Players </td>');
-				$('.mainTableHeader').append('<td class="availSlotsHeader"> Available Slots </td>');
+				$('.content').append('<div class= "mainTableHeader tableRow"></div>');
+				$('.mainTableHeader').append('<div class="clubNameHeader tableColumn"> Club Name </div>');
+				$('.mainTableHeader').append('<div class="maxPlayersHeader tableColumn"> Max Players </div>');
+				$('.mainTableHeader').append('<div class="availSlotsHeader tableColumn"> Available Slots </div>');
 				
 				for( i = 0; i< games.length ; i++){ 
-					$('.mainTable').append('<tr class="' + games[i].id +'"></tr>');
-					$('.'+ games[i].id).append('<td class="clubName">' +  games[i].name +'</td>');
-					$('.'+ games[i].id).append('<td class="maxPlayers">' + games[i].maxPlayers + '</td>');
-					$('.'+ games[i].id).append('<td class="availSlots">' + games[i].availSlots +'</td>');
-					$('.'+ games[i].id).append('<td class="Apply"><button type="button" class="tableContent">View</button></td>');
+					$('.content').append('<div class="' + games[i].id +' tableRow"></div>');
+					$('.'+ games[i].id).append('<div class="clubName tableColumn">' +  games[i].name +'</div>');
+					$('.'+ games[i].id).append('<div class="maxPlayers tableColumn">' + games[i].maxPlayers + '</div>');
+					$('.'+ games[i].id).append('<div class="availSlots tableColumn">' + games[i].availSlots +'</div>');
+					$('.'+ games[i].id).append('<div class="Apply  tableColumn"><button type="button" class="tableContent">View</button></div>');
 					
 					var enterGameButton = $($('.'+ games[i].id).children()[3]).children()[0];
 					enterGameButton.addEventListener("click", _loadClubData);
-					$('.mainTable').append('<tr class="collapseAll collapse' + games[i].id +'"><td><div class"ClubForm"><form>' +
-												+ '<img class="imageSrc" src="/wegg/resources/images/logo.jpg" alt="ClubLogo" height="42" width="42">' +
-												 
-												+ '</form></div></td></tr');
+					$('.content').append('<div class="collapseAll collapse' + games[i].id +'"> <div class"ClubForm"> </div></div');
+
 /*	<form name="myForm" action="demo_form.asp"
 		onsubmit="return validateForm()" method="post">
 		Name: <input type="text" name="fname">
@@ -94,15 +92,13 @@ hfc = function(object){
 				}
 			}
 			else 
-				$('.mainTable').append('<tr><td><div>No Games Available</div></td></tr>');
-
+				$('.content').append('<div> No Games Available</div>');
 		};
 		
 		var _loadClubData = function(event){
 			var clubId = $(event.srcElement).parent().parent()[0].className;
 			var clubName = $(event.srcElement).parent().siblings()[0].innerText;
 			$(".collapseAll").hide();
-					
 			$(".collapse" + clubId ).show();
 		};
 			 
