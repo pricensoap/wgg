@@ -35,3 +35,7 @@
 .clubName, .clubNameHeader {   width: 180px; }
 .maxPlayersHeader, .maxPlayers {width: 110px;}
 .availSlotsHeader, .availSlots { width: 140px;}
+.ClubForm {background-color: ghostwhite;}
+.clubHeaderMain{display: inline-block; *display: inline; zoom: 1; vertical-align: top; font-size: 15px;}
+.CHMainText { margin-left : 5%;}
+.gameDetailsFormTitle{font-weight:bold;}
